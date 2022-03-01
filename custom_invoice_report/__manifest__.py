@@ -10,7 +10,7 @@
         Customisation of invoice report
     """,
 
-    'depends': ['account'],
+    'depends': ['account','web'],
 
     'data': [
             'views/page_header_visibility.xml',
