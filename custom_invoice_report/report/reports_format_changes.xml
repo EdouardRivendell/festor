@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="custom_report_sale_document" inherit_id="sale.report_saleorder_document">
+        <xpath expr="//t[@t-set='address']" position="replace">
+        </xpath>
+        <xpath expr="//t[@t-if='doc.partner_shipping_id == doc.partner_invoice_id
+                             and doc.partner_invoice_id != doc.partner_id
+                             or doc.partner_shipping_id != doc.partner_invoice_id']" position="replace">
+        </xpath>
+
+    </template>
+    <template id="custom_report_purchase_document" inherit_id="purchase.report_purchaseorder_document">
+        <xpath expr="//t[@t-set='address']" position="replace">
+        </xpath>
+        <xpath expr="//t[@t-if='o.dest_address_id']" position="replace">
+        </xpath>
+
+    </template>
+    <template id="custom_report_purchase_stock_document" inherit_id="purchase_stock.report_purchaseorder_document">
+        <xpath expr="//t[@t-else='']" position="replace">
+        </xpath>
+
+    </template>
+    <template id="custom_report_purchase_quotation_document" inherit_id="purchase.report_purchasequotation_document">
+        <xpath expr="//t[@t-set='address']" position="replace">
+        </xpath>
+        <xpath expr="//t[@t-if='o.dest_address_id']" position="replace">
+        </xpath>
+    </template>
+    <template id="custom_report_purchase_quotation_stock_document"
+              inherit_id="purchase_stock.report_purchasequotation_document">
+        <xpath expr="//t[@t-else='']" position="replace">
+        </xpath>
+
+    </template>
+</odoo>

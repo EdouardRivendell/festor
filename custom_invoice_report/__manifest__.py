@@ -9,13 +9,16 @@
     'description': """
         Customisation of invoice report
     """,
+    "license": "LGPL-3",
 
-    'depends': ['account','web'],
+    'depends': ['account','web','sale','purchase','purchase_stock','stock'],
 
     'data': [
             'views/page_header_visibility.xml',
+            'report/reports_format_changes.xml',
             'report/invoice_report.xml',
-            'report/invoice_report_template.xml'
+            'report/invoice_report_template.xml',
+            'report/header_and_footer_for_reports.xml',
     ],
     'installable': True,
     'qweb': [
