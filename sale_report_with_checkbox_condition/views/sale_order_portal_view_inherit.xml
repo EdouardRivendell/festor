@@ -30,5 +30,18 @@
             </t>
 
         </xpath>
+        <xpath expr="//section[@id='details']//t[@t-if='not line.display_type']/td[5]" position="replace">
+
+            <td class="text-right">
+                <t t-if="not line.x_studio_verberg_prijs">
+                    <span class="oe_order_line_price_subtotal" t-field="line.price_subtotal"
+                          groups="account.group_show_line_subtotals_tax_excluded"/>
+                    <span class="oe_order_line_price_total" t-field="line.price_total"
+                          groups="account.group_show_line_subtotals_tax_included"/>
+                </t>
+            </td>
+
+
+        </xpath>
     </template>
 </odoo>
