@@ -3,14 +3,14 @@
     <template id="sale_order_portal_content_inherit_unit_price_check" name="Sales Order Portal inherit unit price check" inherit_id="sale.sale_order_portal_content">
         <xpath expr="//table[@id='sales_order_table']/thead/tr/th[3]" position="replace">
 
-            <t t-set="check_box_check" t-value="sale_order.order_line.filtered(lambda x:not x.x_studio_verberg_prijs)"/>
+            <t t-set="check_box_check" t-value="sale_order.order_line.filtered(lambda x:not x.x_studio_verberg_prijs and x.product_id)"/>
             <t t-if="check_box_check">
                 <th t-attf-class="text-right {{ 'd-none d-sm-table-cell' if report_type == 'html' else '' }}">Unit Price</th>
             </t>
 
         </xpath>
         <xpath expr="//section[@id='details']//t[@t-if='not line.display_type']/td[3]" position="replace">
-            <t t-set="check_box_check" t-value="sale_order.order_line.filtered(lambda x:not x.x_studio_verberg_prijs)"/>
+            <t t-set="check_box_check" t-value="sale_order.order_line.filtered(lambda x:not x.x_studio_verberg_prijs and x.product_id)"/>
             <t t-if="check_box_check">
                 <td t-attf-class="text-right {{ 'd-none d-sm-table-cell' if report_type == 'html' else '' }}">
                     <t t-if="not line.x_studio_verberg_prijs">
@@ -30,8 +30,19 @@
             </t>
 
         </xpath>
-        <xpath expr="//section[@id='details']//t[@t-if='not line.display_type']/td[5]" position="replace">
+        <xpath expr="//section[@id='details']//table[@id='sales_order_table']/thead/tr/th[5]" position="replace">
+                <t t-set="check_box_check_portal" t-value="sale_order.order_line.filtered(lambda x:not x.x_studio_verberg_prijs and x.product_id)"/>
+            <t t-if="check_box_check_portal">
+                <th class="text-right">
+                    <span groups="account.group_show_line_subtotals_tax_excluded">Amount</span>
+                    <span groups="account.group_show_line_subtotals_tax_included">Total Price</span>
+                </th>
 
+            </t>
+        </xpath>
+        <xpath expr="//section[@id='details']//t[@t-if='not line.display_type']/td[5]" position="replace">
+            <t t-set="check_box_check_portal_line" t-value="sale_order.order_line.filtered(lambda x:not x.x_studio_verberg_prijs and x.product_id)"/>
+            <t t-if="check_box_check_portal_line">
             <td class="text-right">
                 <t t-if="not line.x_studio_verberg_prijs">
                     <span class="oe_order_line_price_subtotal" t-field="line.price_subtotal"
@@ -40,6 +51,7 @@
                           groups="account.group_show_line_subtotals_tax_included"/>
                 </t>
             </td>
+            </t>
 
 
         </xpath>

@@ -9,7 +9,6 @@ class SaleOrderLine(models.Model):
 
     x_studio_verberg_prijs = fields.Boolean(string='Check for unit price visibility', help="If set to true, the quantity will not display in report.")
 
-
 class AccountMoveLine(models.Model):
     _inherit = "account.move.line"
 
