@@ -5,7 +5,7 @@
 
             <t t-set="check_box_check" t-value="sale_order.order_line.filtered(lambda x:not x.x_studio_verberg_prijs and x.product_id)"/>
             <t t-if="check_box_check">
-                <th t-attf-class="text-right {{ 'd-none d-sm-table-cell' if report_type == 'html' else '' }}">Unit Price</th>
+                <th t-attf-class="text-right {{ 'd-none d-sm-table-cell' if report_type == 'html' else '' }}">Eenheidsprijs</th>
             </t>
 
         </xpath>
@@ -34,8 +34,8 @@
                 <t t-set="check_box_check_portal" t-value="sale_order.order_line.filtered(lambda x:not x.x_studio_verberg_prijs and x.product_id)"/>
             <t t-if="check_box_check_portal">
                 <th class="text-right">
-                    <span groups="account.group_show_line_subtotals_tax_excluded">Amount</span>
-                    <span groups="account.group_show_line_subtotals_tax_included">Total Price</span>
+                    <span groups="account.group_show_line_subtotals_tax_excluded">Bedrag</span>
+                    <span groups="account.group_show_line_subtotals_tax_included">Totale prijs</span>
                 </th>
 
             </t>

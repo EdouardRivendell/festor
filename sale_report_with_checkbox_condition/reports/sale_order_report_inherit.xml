@@ -6,7 +6,7 @@
             <t t-set="check_box_check" t-value="doc.order_line.filtered(lambda x:not x.x_studio_verberg_prijs and x.product_id)"/>
             <t t-if="check_box_check">
 
-                <th name="th_priceunit" class="text-right">Unit Price</th>
+                <th name="th_priceunit" class="text-right">Eenheidsprijs</th>
             </t>
 
         </xpath>
@@ -27,8 +27,8 @@
             <t t-set="check_box_check_head" t-value="doc.order_line.filtered(lambda x:not x.x_studio_verberg_prijs and x.product_id)"/>
             <t t-if="check_box_check_head">
                 <th name="th_subtotal" class="text-right">
-                    <span groups="account.group_show_line_subtotals_tax_excluded">Amount</span>
-                    <span groups="account.group_show_line_subtotals_tax_included">Total Price</span>
+                    <span groups="account.group_show_line_subtotals_tax_excluded">Bedrag</span>
+                    <span groups="account.group_show_line_subtotals_tax_included">Totale prijs</span>
                 </th>
             </t>
         </xpath>
