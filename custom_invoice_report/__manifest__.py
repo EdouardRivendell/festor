@@ -11,7 +11,7 @@
     """,
     "license": "LGPL-3",
 
-    'depends': ['account','web','sale','purchase','purchase_stock','stock'],
+    'depends': ['account','web','sale','stock'],
 
     'data': [
             'views/page_header_visibility.xml',

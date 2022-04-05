@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
-
-
     <record id="paperformat_invoice_report" model="report.paperformat">
         <field name="name">European A4 invoice New Report</field>
         <field name="default" eval="True"/>
@@ -42,13 +40,7 @@
             <field name="paperformat_id" ref="custom_invoice_report.paperformat_invoice_report"/>
         </record>
 
-        <record id="purchase.action_report_purchase_order" model="ir.actions.report">
-            <field name="paperformat_id" ref="custom_invoice_report.paperformat_invoice_report"/>
-        </record>
         <record id="stock.action_report_delivery" model="ir.actions.report">
-            <field name="paperformat_id" ref="custom_invoice_report.paperformat_invoice_report"/>
-        </record>
-        <record id="purchase.report_purchase_quotation" model="ir.actions.report">
             <field name="paperformat_id" ref="custom_invoice_report.paperformat_invoice_report"/>
         </record>
         <record id="stock.action_report_picking" model="ir.actions.report">
