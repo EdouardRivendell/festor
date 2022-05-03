@@ -7,7 +7,7 @@
                 <div class="row" style="padding:0px;color:white;">
                     <div class="col-7" style="padding-left:30px;">
                         <img src="/custom_invoice_report/static/src/img/festive_logo.png" height="200" width="270px"
-                             style="padding-top:10px;padding-bottom:5px;"/>
+                             style="padding-top:10px;padding-bottom:15px;"/>
                         <div class="first-page" style="padding-left:20px;padding-bottom:10px;">
                             <div class="row" t-if="o" style="padding-left:10px;">
                                 <div class="col-3.5" style="padding-right:8px;">
@@ -60,19 +60,19 @@
                             </div>
                         </div>
                         <div class="not-first-page" style="position:absolute;width:100%;">
-                            <div class="row text-left" t-if="o.company_id.name" t-esc="o.company_id.name"/>
-                            <div class="row" t-if="o.company_id.street" t-esc="o.company_id.street"/>
-                            <div class="row">
+                            <div class="text-left" t-if="o.company_id.name" t-esc="o.company_id.name"/>
+                            <div class="" t-if="o.company_id.street" t-esc="o.company_id.street"/>
+                            <div class="">
                                 <t t-if="o.company_id.zip" t-esc="o.company_id.zip"/>
                                 <t t-if="o.company_id.zip">
-                                    <![CDATA[ &nbsp; ]]>
+                                     &amp;nbsp;
                                 </t>
                                 <t t-esc="o.company_id.city"/>
                             </div>
                             <br/>
-                            <div class="row" t-if="o.company_id.vat" t-esc="o.company_id.vat"/>
-                            <div class="row">IBAN BE27 0019 1266 3073</div>
-                            <div class="row">BIC: GEBABEBB</div>
+                            <div class="" t-if="o.company_id.vat" t-esc="o.company_id.vat"/>
+                            <div class="">IBAN BE27 0019 1266 3073</div>
+                            <div class="" style="text-align:left;padding-left:0px;">BIC: GEBABEBB</div>
                         </div>
                     </div>
                 </div>

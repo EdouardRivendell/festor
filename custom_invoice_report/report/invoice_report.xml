@@ -35,6 +35,9 @@
                 <record id="account.account_invoices_without_payment" model="ir.actions.report">
             <field name="paperformat_id" ref="custom_invoice_report.paperformat_invoice_report"/>
         </record>
+        <record id="account.action_report_payment_receipt" model="ir.actions.report">
+            <field name="paperformat_id" ref="custom_invoice_report.paperformat_invoice_report"/>
+        </record>
 
         <record id="sale.action_report_saleorder" model="ir.actions.report">
             <field name="paperformat_id" ref="custom_invoice_report.paperformat_invoice_report"/>
