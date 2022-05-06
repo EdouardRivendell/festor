@@ -19,6 +19,8 @@
         'report/invoice_report.xml',
         'report/invoice_report_template.xml',
         'report/header_and_footer_for_reports.xml',
+        'report/delivery_slip_report_inherit.xml',
+        'report/picking_operations_report.xml',
     ],
     'installable': True,
 }
