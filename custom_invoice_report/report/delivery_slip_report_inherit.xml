@@ -51,7 +51,7 @@
         </xpath>
         <xpath expr="//div[hasclass('page')]" position="replace">
                 <div class="page" style="padding:3%;">
-                    <h2>
+                    <h2 style="color:#56B773;">
                         <span t-field="o.name"/>
                     </h2>
                     <div class="row mt32 mb32">
