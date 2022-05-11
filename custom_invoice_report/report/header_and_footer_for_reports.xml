@@ -5,11 +5,11 @@
             <div class="header col-12"
                  style="background-color:#56B773;margin-left:-14px;position:absolute;font-weight: normal;">
                 <div class="row" style="padding:0px;color:white;">
-                    <div class="col-7" style="padding-left:30px;">
-                        <img src="/custom_invoice_report/static/src/img/festive_logo.png" height="200" width="270px"
+                    <div class="col-7" style="padding-left:10px;">
+                        <img src="/custom_invoice_report/static/src/img/Logo.png" height="200" width="280px"
                              style="padding-top:10px;padding-bottom:15px;"/>
                         <div class="first-page" style="padding-left:20px;padding-bottom:10px;">
-                            <div class="row" t-if="o" style="padding-left:10px;">
+                            <div class="row" t-if="o" style="padding-left:30px;">
                                 <div class="col-3.5" style="padding-right:8px;">
                                     <div>
                                         <div t-esc="o.company_id.name"/>
